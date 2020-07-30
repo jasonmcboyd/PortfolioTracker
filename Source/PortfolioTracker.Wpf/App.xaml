@@ -1,0 +1,21 @@
+﻿<Application x:Class="PortfolioTracker.Wpf.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Converters/ConvertersResourceDictionary.xaml" />
+        <ResourceDictionary Source="/Views/ResourceDictionaries/CommonViewResources.xaml" />
+        <ResourceDictionary Source="/Views/ResourceDictionaries/TimeFrameRadioButton.xaml" />
+        <ResourceDictionary Source="/Views/ResourceDictionaries/NavigationLinkRadioButton.xaml" />
+        <ResourceDictionary Source="/Views/ResourceDictionaries/DataGridStyle.xaml" />
+        <ResourceDictionary Source="/Views/ResourceDictionaries/DataGridCellStyle.xaml" />
+        <ResourceDictionary Source="Views/PortfolioValueTimeSeriesView.xaml" />
+        <ResourceDictionary Source="Views/HistoryView.xaml" />
+        <ResourceDictionary Source="Views/AccountSummaryView.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+  
+</Application>

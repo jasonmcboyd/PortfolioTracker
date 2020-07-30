@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style x:Key="RegionBorderStyle"
+         TargetType="{x:Type Border}">
+    <Setter Property="Padding"
+            Value="10" />
+    <Setter Property="BorderThickness"
+            Value="1" />
+    <Setter Property="BorderBrush"
+            Value="DarkGray" />
+    <Setter Property="Background"
+            Value="White" />
+    <Setter Property="Margin"
+            Value="10" />
+  </Style>
+
+  <Style x:Key="RegionHeaderTextBlock"
+         TargetType="{x:Type TextBlock}">
+    <Setter Property="FontSize"
+            Value="30" />
+    <Setter Property="Margin"
+            Value="0,0,0,10" />
+  </Style>
+
+  <Style x:Key="ErrorMessageTextBlock"
+         TargetType="{x:Type TextBlock}">
+    <Setter Property="Foreground"
+            Value="Red" />
+    <Setter Property="TextWrapping"
+            Value="Wrap" />
+  </Style>
+
+</ResourceDictionary>

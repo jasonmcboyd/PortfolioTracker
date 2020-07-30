@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:PortfolioTracker.Wpf.ViewModels">
+
+  <!--
+  NOTE:
+  https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-templating-overview
+  
+  If you assign a DataTemplate an x:Key value, you are overriding the implicit
+  x:Key and the DataTemplate will not be applied automatically.
+  -->
+  <DataTemplate DataType="{x:Type vm:HistoryViewModel}">
+    <Border Style="{StaticResource RegionBorderStyle}">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="History"
+                   Style="{StaticResource RegionHeaderTextBlock}" />
+        <TextBlock Text="{Binding ErrorMessage}"
+                   Style="{StaticResource ErrorMessageTextBlock}"
+                   Grid.Row="1" />
+        <DataGrid ItemsSource="{Binding HistoricalActions}"
+                  Grid.Row="2"
+                  Style="{StaticResource DataGridStyle}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding Date, StringFormat=M/dd/yyyy}"
+                                Header="Date"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+            <DataGridTextColumn Binding="{Binding Action}"
+                                Header="Action"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+            <DataGridTextColumn Binding="{Binding TickerSymbol}"
+                                Header="Ticker Symbol"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+            <DataGridTextColumn Binding="{Binding Price, StringFormat=C}"
+                                Header="Price"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+            <DataGridTextColumn Binding="{Binding Quantity}"
+                                Header="Quantity"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+            <DataGridTextColumn Binding="{Binding Amount, StringFormat=C}"
+                                Header="Amount"
+                                ElementStyle="{StaticResource DataGridCellStyle}" />
+          </DataGrid.Columns>
+        </DataGrid>
+      </Grid>
+    </Border>
+  </DataTemplate>
+
+</ResourceDictionary>

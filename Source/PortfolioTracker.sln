@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioTracker.EF", "PortfolioTracker.EF\PortfolioTracker.EF.csproj", "{A01481BF-3CC3-41DC-9095-9C094E8B9768}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PortfolioTracker.Sql", "PortfolioTracker.Sql\PortfolioTracker.Sql.sqlproj", "{726D3655-F951-41B1-AA18-13BA9D0E7CD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioTracker.MarketProvider", "PortfolioTracker.MarketProvider\PortfolioTracker.MarketProvider.csproj", "{4428571B-31D0-43AF-81A8-14AB782D688C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioTracker.Wpf", "PortfolioTracker.Wpf\PortfolioTracker.Wpf.csproj", "{379B85A6-91CC-427E-AF97-832650A81FB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioTracker.MarketProvider.Tests", "PortfolioTracker.MarketProvider.Tests\PortfolioTracker.MarketProvider.Tests.csproj", "{3987B72D-4C03-4DD3-AB6E-D13A6CF9705E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioTracker.Wpf.Tests", "PortfolioTracker.Wpf.Tests\PortfolioTracker.Wpf.Tests.csproj", "{B1F99B88-2506-4901-80F5-9ABB676545B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A01481BF-3CC3-41DC-9095-9C094E8B9768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A01481BF-3CC3-41DC-9095-9C094E8B9768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A01481BF-3CC3-41DC-9095-9C094E8B9768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A01481BF-3CC3-41DC-9095-9C094E8B9768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726D3655-F951-41B1-AA18-13BA9D0E7CD3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4428571B-31D0-43AF-81A8-14AB782D688C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4428571B-31D0-43AF-81A8-14AB782D688C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4428571B-31D0-43AF-81A8-14AB782D688C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4428571B-31D0-43AF-81A8-14AB782D688C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{379B85A6-91CC-427E-AF97-832650A81FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{379B85A6-91CC-427E-AF97-832650A81FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{379B85A6-91CC-427E-AF97-832650A81FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{379B85A6-91CC-427E-AF97-832650A81FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3987B72D-4C03-4DD3-AB6E-D13A6CF9705E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3987B72D-4C03-4DD3-AB6E-D13A6CF9705E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3987B72D-4C03-4DD3-AB6E-D13A6CF9705E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3987B72D-4C03-4DD3-AB6E-D13A6CF9705E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F99B88-2506-4901-80F5-9ABB676545B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F99B88-2506-4901-80F5-9ABB676545B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F99B88-2506-4901-80F5-9ABB676545B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F99B88-2506-4901-80F5-9ABB676545B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A3CDDA9-EBAC-465E-B0E4-221C8E3DE8F2}
+	EndGlobalSection
+EndGlobal

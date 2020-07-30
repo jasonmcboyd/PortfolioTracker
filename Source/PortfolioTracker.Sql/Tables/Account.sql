@@ -1,0 +1,10 @@
+CREATE TABLE [Account]
+(
+	[Id] INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[RowVersion] ROWVERSION,
+	[FirstName] NVARCHAR(35) NOT NULL,
+	[LastName] NVARCHAR(35) NOT NULL,
+	[Balance] DECIMAL(18,4) NOT NULL
+		CONSTRAINT DF_Account_Balance
+		DEFAULT 0
+);

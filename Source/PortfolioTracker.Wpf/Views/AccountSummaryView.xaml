@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:PortfolioTracker.Wpf.ViewModels"
+                    xmlns:con="clr-namespace:PortfolioTracker.Wpf.Converters">
+
+  <!--
+  NOTE:
+  https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-templating-overview
+  
+  If you assign a DataTemplate an x:Key value, you are overriding the implicit
+  x:Key and the DataTemplate will not be applied automatically.
+  -->
+  <DataTemplate DataType="{x:Type vm:AccountSummaryViewModel}">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Border Background="#27333D"
+              BorderThickness="0,0,0,1"
+              BorderBrush="Black">
+        <StackPanel>
+          <ContentControl Content="{Binding PortfolioValueTimeSeriesViewModel}"
+                          HorizontalAlignment="Stretch" />
+        </StackPanel>
+      </Border>
+      <Border Style="{StaticResource RegionBorderStyle}"
+              Grid.Row="1"
+              MinHeight="200">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <TextBlock Text="Positions"
+                     Style="{StaticResource RegionHeaderTextBlock}" />
+          <DataGrid Grid.Row="1"
+                    ItemsSource="{Binding Positions}"
+                    Style="{StaticResource DataGridStyle}">
+            <DataGrid.Resources>
+              <con:PositiveNegativeToColorConverter x:Key="PriceChangeColorConverter"
+                                                    PositiveColor="Green"
+                                                    ZeroColor="Black"
+                                                    NegativeColor="Red" />
+              <Style x:Key="ForegroundStyle"
+                     TargetType="TextBlock"
+                     BasedOn="{StaticResource DataGridCellStyle}">
+                <Setter Property="Foreground"
+                        Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type DataGridRow}}, Path=Item.PriceChange, Converter={StaticResource PriceChangeColorConverter}}" />
+              </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+              <DataGridTextColumn Binding="{Binding TickerSymbol}"
+                                  Header="Ticker Symbol"
+                                  ElementStyle="{StaticResource DataGridCellStyle}" />
+              <DataGridTextColumn Binding="{Binding Quantity}"
+                                  Header="Quantity"
+                                  ElementStyle="{StaticResource DataGridCellStyle}" />
+              <DataGridTextColumn Binding="{Binding Path=Price, StringFormat=C}"
+                                  Header="Price"
+                                  ElementStyle="{StaticResource DataGridCellStyle}" />
+              <DataGridTextColumn Binding="{Binding Path=PriceChange, Converter={StaticResource NullableDecimalToMoneyConverter}}"
+                                  Header="Price Change"
+                                  ElementStyle="{StaticResource ForegroundStyle}" />
+              <DataGridTextColumn Binding="{Binding DayChange, Converter={StaticResource NullableDecimalToMoneyConverter}}"
+                                  Header="Day Change"
+                                  ElementStyle="{StaticResource ForegroundStyle}" />
+              <DataGridTextColumn Binding="{Binding MarketValue, StringFormat=C}"
+                                  Header="Market Value"
+                                  ElementStyle="{StaticResource DataGridCellStyle}"/>
+              <DataGridTextColumn Binding="{Binding CostBasis, StringFormat=C}"
+                                  Header="Cost Basis"
+                                  ElementStyle="{StaticResource DataGridCellStyle}" />
+              <DataGridTextColumn Binding="{Binding Gain, StringFormat=C}"
+                                  Header="Gain"
+                                  ElementStyle="{StaticResource ForegroundStyle}" />
+            </DataGrid.Columns>
+          </DataGrid>
+          <TextBlock Grid.Row="2"
+                     Text="{Binding LoadPositionsErrorMessage}"
+                     Style="{StaticResource ErrorMessageTextBlock}" />
+        </Grid>
+      </Border>
+      <Border Style="{StaticResource RegionBorderStyle}"
+              Grid.Row="2">
+        <StackPanel TextBlock.FontSize="20">
+          <TextBlock Text="Cash"
+                     Style="{StaticResource RegionHeaderTextBlock}" />
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Balance:"
+                       Margin="0,0,10,0" />
+            <TextBlock Text="{Binding Account.Balance, StringFormat=C}" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </DataTemplate>
+
+</ResourceDictionary>
